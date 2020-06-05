@@ -1,7 +1,7 @@
+import 'package:aadhaartracer/ui/BottomNavigationScreen.dart';
 import 'package:provider/provider.dart';
 
 import 'common/moor_database.dart';
-import 'file:///C:/Users/ASUS/Documents/AadhaarTracer/aadhaar_tracer/lib/ui/ScannerScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,12 +16,13 @@ class MyApp extends StatelessWidget {
     return Provider<MoorDatabase>(
         create: (context) => new MoorDatabase(),
         child:MaterialApp(
+          debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: ThemeData(
             primarySwatch: Colors.blue,
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
-          home: ScannerScreen(),
+          home: BottomNavigationWidget(),
         ));
   }
 }

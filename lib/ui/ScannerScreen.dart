@@ -47,56 +47,58 @@ class ScannerScreen extends StatelessWidget{
 
     return Scaffold(
         backgroundColor: Color(0xFFcae6e7),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              SizedBox(height: 200,width: 200,child:
-              Image.asset('assets/images/scanner.png')),
-              Container(
-                margin: EdgeInsets.only(top: 20),
-                width: 200,
-                child: RaisedButton(
-                  onPressed: (){
-                    startScanner();
-                  },
-                    padding: EdgeInsets.all(20),
-                    shape:RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
-                    child :
-                    Text("SCAN AADHAAR"),
-                    color: Color(0xFF0e6ba8),
-                    textColor: Colors.white),
+        body: SafeArea(
+          child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  SizedBox(height: 200,width: 200,child:
+                  Image.asset('assets/images/scanner.png')),
+                  Container(
+                    margin: EdgeInsets.only(top: 20),
+                    width: 200,
+                    child: RaisedButton(
+                        onPressed: (){
+                          startScanner();
+                        },
+                        padding: EdgeInsets.all(20),
+                        shape:RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
+                        child :
+                        Text("SCAN AADHAAR"),
+                        color: Color(0xFF0e6ba8),
+                        textColor: Colors.white),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 20),
+                    width: 200,
+                    child: RaisedButton(
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) =>
+                              ManualEntryView()));},
+                        padding: EdgeInsets.all(20),
+                        shape:RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
+                        child :
+                        Text("MANUAL ENTRY"),
+                        color: Color(0xFF0e6ba8),
+                        textColor: Colors.white),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 20),
+                    width: 200,
+                    child: RaisedButton(
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) =>
+                              HistoryScreen()));},
+                        padding: EdgeInsets.all(20),
+                        shape:RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
+                        child :
+                        Text("VIEW ENTRIES"),
+                        color: Color(0xFF8e2d40),
+                        textColor: Colors.white),
+                  )
+                ],
               ),
-              Container(
-                margin: EdgeInsets.only(top: 20),
-                width: 200,
-                child: RaisedButton(
-                    onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) =>
-                          ManualEntryView()));},
-                    padding: EdgeInsets.all(20),
-                    shape:RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
-                    child :
-                    Text("MANUAL ENTRY"),
-                    color: Color(0xFF0e6ba8),
-                    textColor: Colors.white),
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 20),
-                width: 200,
-                child: RaisedButton(
-                    onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) =>
-                        HistoryScreen()));},
-                    padding: EdgeInsets.all(20),
-                    shape:RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
-                    child :
-                    Text("VIEW ENTRIES"),
-                    color: Color(0xFF8e2d40),
-                    textColor: Colors.white),
-              )
-            ],
-          ),
+            ),
         )
     );
   }
