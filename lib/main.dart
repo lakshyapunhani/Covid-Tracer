@@ -1,4 +1,5 @@
 import 'package:aadhaartracer/ui/BottomNavigationScreen.dart';
+import 'package:aadhaartracer/ui/SplashScreen.dart';
 import 'package:provider/provider.dart';
 
 import 'common/moor_database.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         create: (context) => new MoorDatabase(),
         child:MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
+          title: 'Corona Tracer',
           theme: ThemeData(
             primarySwatch: Colors.blue,
             visualDensity: VisualDensity.adaptivePlatformDensity,

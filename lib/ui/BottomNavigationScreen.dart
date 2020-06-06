@@ -1,3 +1,4 @@
+import 'package:aadhaartracer/ui/Guidelines.dart';
 import 'package:aadhaartracer/ui/ScannerScreen.dart';
 import 'package:aadhaartracer/ui/SettingsScreen.dart';
 import 'package:flutter/material.dart';
@@ -15,10 +16,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
     ScannerScreen(),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
+    Guidelines(),
     SettingsScreen(),
   ];
 

@@ -34,7 +34,8 @@ class HistoryState extends State<HistoryScreen>
   @override
   Widget build(BuildContext context) {
     return MaterialApp(home:
-    Scaffold(appBar: AppBar(title: Text("History")),
+    Scaffold(appBar: AppBar(
+        title: Text("History"),backgroundColor:  Color(0xFF0e6ba8)),
         body: Container(child:
         ListView.builder(itemBuilder:(context, position){
           return Container(margin: EdgeInsets.all(5),
