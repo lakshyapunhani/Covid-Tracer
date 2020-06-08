@@ -4,14 +4,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class Guidelines extends StatefulWidget{
+class PrivacyPolicy extends StatefulWidget{
 
   @override
-  State<StatefulWidget> createState() => GuidelinesState();
+  State<StatefulWidget> createState() => PrivacyPolicyState();
 
 }
 
-class GuidelinesState extends State<Guidelines>{
+class PrivacyPolicyState extends State<PrivacyPolicy>{
 
   Completer<WebViewController> _controller = Completer<WebViewController>();
 
@@ -20,7 +20,7 @@ class GuidelinesState extends State<Guidelines>{
     return Scaffold(
       body: SafeArea(
         child: WebView(
-          initialUrl: 'https://pract-f8513.web.app/',
+          initialUrl: 'https://pract-f8513.web.app/privacy.html',
           onWebViewCreated: (WebViewController webViewController) {
             _controller.complete(webViewController);
           },

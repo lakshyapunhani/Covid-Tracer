@@ -25,9 +25,34 @@ class ManualEntryViewState extends State<ManualEntryView>{
     database = Provider.of<MoorDatabase>(context,
         listen: false);
 
+    if(nameEditingController.text.isEmpty){
+      Toast.show("Please enter name", context, duration: Toast.LENGTH_SHORT, gravity:  Toast.BOTTOM);
+      return;
+    }
+
+    if(addressEditingController.text.isEmpty){
+      Toast.show("Please enter address", context, duration: Toast.LENGTH_SHORT, gravity:  Toast.BOTTOM);
+      return;
+    }
+
+    if(phoneNumberEditingController.text.isEmpty){
+      Toast.show("Please enter phone number", context, duration: Toast.LENGTH_SHORT, gravity:  Toast.BOTTOM);
+      return;
+    }
+    var idProof;
+    var idProofNumber;
+    if(idProofEditingController.text.isEmpty){
+      idProof = "No Id Proof";
+      idProofNumber = "XXXXXX";
+    }
+    else{
+      idProof = idProofEditingController.text;
+      idProofNumber = idProofNumberEditingController.text;
+    }
+
     final entry = Entrie(
-        idType: idProofEditingController.text,
-        idNumber: idProofEditingController.text,
+        idType: idProof,
+        idNumber:idProofNumber,
         name: nameEditingController.text,
         address: addressEditingController.text,
         phoneNumber: phoneNumberEditingController.text,
@@ -40,7 +65,8 @@ class ManualEntryViewState extends State<ManualEntryView>{
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body:SafeArea(child:
+    return Scaffold(resizeToAvoidBottomPadding: false,
+      body:SafeArea(child:
     Container(margin: EdgeInsets.all(10.0),
         child:
         Column(children: <Widget>[
@@ -50,8 +76,8 @@ class ManualEntryViewState extends State<ManualEntryView>{
             child: TextField(
               controller: idProofEditingController,
               decoration: const InputDecoration(
-                labelText: 'Id Proof',
-                hintText: 'Enter Id Proof',
+                labelText: 'Id Proof if any',
+                hintText: 'Id Proof',
                 filled: true,
               ),
               onChanged: (String value) {
@@ -67,7 +93,7 @@ class ManualEntryViewState extends State<ManualEntryView>{
             child: TextField(
               controller: idProofNumberEditingController,
               decoration: const InputDecoration(
-                labelText: 'Driving License Number',
+                labelText: 'Id Proof Registration Number if any',
                 hintText: 'Enter number',
                 filled: true,
               ),
@@ -84,7 +110,7 @@ class ManualEntryViewState extends State<ManualEntryView>{
             child: TextField(
               controller: nameEditingController,
               decoration: const InputDecoration(
-                labelText: 'Name',
+                labelText: 'Name *',
                 hintText: 'Enter name',
                 filled: true,
               ),
@@ -101,7 +127,7 @@ class ManualEntryViewState extends State<ManualEntryView>{
             child: TextField(
               controller: addressEditingController,
               decoration: const InputDecoration(
-                labelText: 'Address',
+                labelText: 'Address *',
                 hintText: 'Enter address',
                 filled: true,
               ),
@@ -117,7 +143,7 @@ class ManualEntryViewState extends State<ManualEntryView>{
             child: TextField(
               controller: phoneNumberEditingController,
               decoration: const InputDecoration(
-                labelText: 'Phone Number',
+                labelText: 'Phone Number *',
                 hintText: 'Enter number',
                 filled: true,
               ),

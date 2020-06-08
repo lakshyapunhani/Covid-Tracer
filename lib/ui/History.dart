@@ -35,7 +35,8 @@ class HistoryState extends State<HistoryScreen>
   Widget build(BuildContext context) {
     return MaterialApp(home:
     Scaffold(appBar: AppBar(
-        title: Text("History"),backgroundColor:  Color(0xFF0e6ba8)),
+        title: Text("Entries"),
+        backgroundColor:  Color(0xFF0e6ba8)),
         body: Container(child:
         ListView.builder(itemBuilder:(context, position){
           return Container(margin: EdgeInsets.all(5),
@@ -47,11 +48,14 @@ class HistoryState extends State<HistoryScreen>
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Text(_entries[position].idType,
-                    style: TextStyle(fontSize: 14),textAlign:TextAlign.left),
+                      style: TextStyle(fontSize: 14),textAlign:TextAlign.left),
                   Container(margin: EdgeInsets.all(5)),
                   Text(_entries[position].idNumber,
                       style: TextStyle(fontSize: 20),textAlign:TextAlign.left),
                   Container(margin: EdgeInsets.all(5),),
+                  Text(_entries[position].name,
+                      style: TextStyle(fontSize: 14),textAlign:TextAlign.left),
+                  Container(margin: EdgeInsets.all(5)),
                   Text(_entries[position].address,
                       style: TextStyle(fontSize: 20),textAlign:TextAlign.left),
                   Container(margin: EdgeInsets.all(5),),
